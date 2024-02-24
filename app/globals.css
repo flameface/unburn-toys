@@ -1,0 +1,51 @@
+:root {
+    --zinc-050: #fafafa;
+    --zinc-100: #f4f4f5;
+    --zinc-200: #e4e4e7;
+    --zinc-300: #d4d4d8;
+    --zinc-400: #a1a1aa;
+    --zinc-500: #71717a;
+    --zinc-600: #52525b;
+    --zinc-700: #3f3f46;
+    --zinc-800: #27272a;
+    --zinc-900: #09090b;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html,
+body {
+    background: var(--zinc-900);
+    padding: 10px;
+}
+
+.container {
+    margin: auto;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.line {
+    background-color: #a1a1aa18;
+    height: 0.1px;
+    width: 59%;
+    margin: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 100%;
+    }
+}

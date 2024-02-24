@@ -1,0 +1,43 @@
+nav {
+    display: flex;
+    background: transparent;
+    border: 1px solid var(--zinc-800);
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin: 10px 28px;
+    align-items: center;
+}
+
+nav .logo {
+    width: 130px;
+    margin-left: 10px;
+    user-select: none;
+}
+
+nav .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--zinc-100);
+    padding: 5px;
+    border-radius: 100px;
+    margin: 0px 10px 0px 0px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+nav .button img {
+    width: 25px;
+}
+
+nav .button:hover {
+    background: var(--zinc-400);
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        margin: 10px 0px;
+    }
+}

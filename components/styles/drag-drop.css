@@ -1,0 +1,42 @@
+.drag-drop {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 10px;
+    border: 1px solid var(--zinc-800);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+}
+
+.drag-drop p {
+    margin: 10px;
+}
+
+.drag-drop .em {
+    font-size: 13px;
+    margin: 10px;
+    color: var(--zinc-800) !important;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.drag-drop .image-container img {
+    border-radius: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .drag-drop {
+        width: 100%;
+    }
+}
