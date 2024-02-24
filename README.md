@@ -7,7 +7,8 @@
 <a href="#about"><b>About</b></a> •
 <a href="#tools"><b>Tools</b></a> •
 <a href="#deploy-your-own"><b>Deploy Your Own</b></a> •
-<a href="#manual-installation"><b>Manual Installation</b></a>
+<a href="#manual-installation"><b>Manual Installation</b></a> •
+<a href="https://toys.unburn.tech/"><b>Live Preview</b></a>
 
 </p>
 
