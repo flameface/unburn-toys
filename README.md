@@ -40,7 +40,7 @@ Installing all dependencies.
 npm install
 ```
 
-Create `.env.local` and put your API key. (Get it here: [AI Studio](https://aistudio.google.com/)).
+Create `.env.local` file in **root** directory and put your API key. (Get it here: [AI Studio](https://aistudio.google.com/)).
 ```
 GOOGLE_API_KEY=XXXXXXXXXXXXXXXXX
 ```
