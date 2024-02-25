@@ -7,19 +7,21 @@ interface ToyData {
         avatar: string;
         name: string;
     };
+    github: string;
     link: string;
 }
 
 const toysData: ToyData[] = [
-  {
-    header: "Password Generator",
-    description: "Generate strong passwords to use anywhere",
-    footer: {
-            avatar: "",
-            name: "_einzi_"
+    {
+        header: "Password Generator",
+        description: "Generate strong passwords to use anywhere",
+        footer: {
+            avatar: "https://avatars.githubusercontent.com/u/91873189?v=4",
+            name: "Einzi"
         },
-    link: "/password-generator"
-  },
+        github: "https://github.com/einzi-0",
+        link: "/password-generator"
+    },
     {
         header: "Caption Generator",
         description: "Generate caption from image for instagram, twitter and more.",
@@ -27,6 +29,7 @@ const toysData: ToyData[] = [
             avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
             name: "FlameFace"
         },
+        github: "https://github.com/flameface",
         link: "/caption-generator"
     },
     {
@@ -36,6 +39,7 @@ const toysData: ToyData[] = [
             avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
             name: "FlameFace"
         },
+        github: "https://github.com/flameface",
         link: "/image-to-prompt"
     },
     {
@@ -45,6 +49,7 @@ const toysData: ToyData[] = [
             avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
             name: "FlameFace"
         },
+        github: "https://github.com/flameface",
         link: "/prompt-enhancer"
     },
     {
@@ -54,6 +59,7 @@ const toysData: ToyData[] = [
             avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
             name: "FlameFace"
         },
+        github: "https://github.com/flameface",
         link: "/image-text-extractor"
     },
     {
@@ -63,6 +69,7 @@ const toysData: ToyData[] = [
             avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
             name: "FlameFace"
         },
+        github: "https://github.com/flameface",
         link: "/grammar-checker"
     },
     {
@@ -72,6 +79,7 @@ const toysData: ToyData[] = [
             avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
             name: "FlameFace"
         },
+        github: "https://github.com/flameface",
         link: "/paraphraser"
     },
     {
@@ -81,17 +89,9 @@ const toysData: ToyData[] = [
             avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
             name: "FlameFace"
         },
+        github: "https://github.com/flameface",
         link: "/summarizer"
-    },
-    // {
-    //     header: "Translator",
-    //     description: "A translator converts text between languages while maintaining meaning.",
-    //     footer: {
-    //         avatar: "https://cdn.discordapp.com/avatars/786504767358238720/f65e8322c0c290e7fc1d9ad20322256b.webp?size=512",
-    //         name: "FlameFace"
-    //     },
-    //     link: "/translator"
-    // }
+    }
 ]
 
 export function Card() {
@@ -105,7 +105,9 @@ export function Card() {
                     </div>
                     <div className="card-footer">
                         <img className="w-7 mr-2 rounded-full" src={x.footer.avatar} alt={x.footer.name} draggable="false" />
-                        <p className="font-thin text-zinc-600 text-sm">Added by {x.footer.name}</p>
+                        <div>
+                            <p className="font-thin text-zinc-600 text-sm">Added by <a style={{ color: "var(--zinc-400)", fontWeight: 500 }} href={x && x.github}>{x && x.footer && x.footer.name}</a></p>
+                        </div>
                     </div>
                 </div>
             </a>

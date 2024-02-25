@@ -74,7 +74,7 @@ export default function Home() {
                     <input
                         type="text"
                         onChange={(e) => setPrompt(e.target.value)}
-                        placeholder='"Generate a 8 letter strong password"'
+                        placeholder='eg. Generate a 8 letter password based on a name einzi'
                     />
                 </div>
 
