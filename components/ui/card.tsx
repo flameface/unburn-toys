@@ -11,6 +11,15 @@ interface ToyData {
 }
 
 const toysData: ToyData[] = [
+  {
+    header: "Password Generator",
+    description: "Generate strong passwords to use anywhere",
+    footer: {
+            avatar: "",
+            name: "_einzi_"
+        },
+    link: "/password-generator"
+  },
     {
         header: "Caption Generator",
         description: "Generate caption from image for instagram, twitter and more.",
