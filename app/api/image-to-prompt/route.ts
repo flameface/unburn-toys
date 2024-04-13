@@ -19,10 +19,10 @@ export async function POST(request: Request) {
 
         const parts = [
             { text: "Generate an enhanced text prompt for this image, for example:\n" },
-            { text: "input: " }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/ip-one.png")).toString("base64") } },
+            { text: "input: (imagine image of a lion)" },
             { text: "output: A lion wearing sunglasses and a suit, standing in front of a blue sky. The lion should be muscular and well-groomed, and the suit should be tailored to fit him perfectly. He should have gold chains around his neck and a gold watch on his wrist. He should be looking at the camera with a confident expression." },
 
-            { text: "input: " }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/ip-two.png")).toString("base64") } },
+            { text: "input: (imagine image of a young girl)" },
             { text: "output: A young girl with short brown hair and green eyes, wearing a blue shirt and brown jacket. She should be smiling and looking at the camera. The background should be blurred and contain some white dandelion-like flowers." },
 
             { text: "input: " }, { inlineData: { mimeType: "image/jpeg", data: image } },
