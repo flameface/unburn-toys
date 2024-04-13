@@ -1,7 +1,7 @@
 {
-  "name": "unburn-toys",
-  "description": "Unburn Toys is an open-source AI project with a bunch of useful tools.",
-  "version": "0.1.0",
+  "name": "toys.unburn.tech",
+  "description": "Empower your daily tasks with our versatile AI toolbox, delivering essential tools for every need.",
+  "version": "0.2.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,18 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.2.1",
-    "next": "14.1.0",
+    "@google/generative-ai": "^0.5.0",
+    "@nextui-org/react": "^2.2.10",
+    "framer-motion": "^11.0.28",
+    "next": "14.1.4",
     "react": "^18",
+    "react-compare-slider": "^3.0.1",
     "react-dom": "^18",
-    "react-dropzone": "^14.2.3"
+    "react-dropzone": "^14.2.3",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
     "typescript": "^5"
   },
-  "author": "FlameFace",
-  "license": "MIT"
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flameface/unburn-toys.git"
+  }
 }

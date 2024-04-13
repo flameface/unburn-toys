@@ -1,0 +1,93 @@
+.drag-drop-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.drag-drop {
+    display: flex;
+    box-sizing: border-box;
+    width: 663px;
+    height: 249px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid #1E1E1E;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 10px;
+    cursor: pointer;
+}
+
+.image-preview {
+    width: 249px;
+    height: 249px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid #1E1E1E;
+    border-radius: 10px;
+    margin-left: 37px !important;
+}
+
+.image-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    cursor: pointer
+}
+
+.drag-drop p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.drag-drop .image-container img {
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+}
+
+.drag-drop-max {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .drag-drop {
+        width: 100%;
+        height: 160px;
+        padding: 0px;
+    }
+
+    .drag-drop p {
+        text-align: center;
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .drag-drop-area {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .image-preview {
+        width: 100%;
+        height: auto;
+        margin: auto !important;
+    }
+}

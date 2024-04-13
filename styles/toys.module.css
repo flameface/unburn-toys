@@ -1,0 +1,73 @@
+.main {
+    margin: auto;
+    box-sizing: border-box;
+    width: 1013px;
+    border: 1px solid #1E1E1E;
+    border-radius: 5px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.main img {
+    margin: auto;
+}
+
+.main-h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.main-p {
+    font-size: 16px;
+    margin: 5px 0px;
+    font-weight: 200;
+}
+
+.description-area textarea {
+    padding: 20px;
+    width: 925px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid #1E1E1E;
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+    min-height: 212px;
+}
+
+.copy {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25.2px);
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.copy img {
+    width: 15px
+}
+
+.copy:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .description-area {
+        width: 100%;
+    }
+
+    .description-area textarea {
+        width: 100%;
+    }
+}

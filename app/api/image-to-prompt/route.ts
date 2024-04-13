@@ -1,50 +1,32 @@
-import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from '@google/generative-ai';
-
-const MODEL_NAME = "gemini-1.0-pro-vision-latest";
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { generationConfig, safetySettings } from '../config'
+import fs from "fs"
 
 export async function POST(request: Request) {
-    const { dataUrl } = await request.json()
+    const { image } = await request.json()
+
+    if (!image) {
+        return new Response("Invalid Generation Parameters", {
+            status: 400
+        })
+    }
 
     try {
         const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY as string);
-        const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+        const model = genAI.getGenerativeModel({ model: process.env.MODEL_NAME as string }, {
+            apiVersion: "v1beta"
+        });
 
         const parts = [
-            {
-                text: "Generate an enhanced text prompt for this image (just text output):\n"
-            },
-            {
-                inlineData: {
-                    mimeType: "image/jpeg",
-                    data: dataUrl
-                }
-            }
-        ];
+            { text: "Generate an enhanced text prompt for this image, for example:\n" },
+            { text: "input: " }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/ip-one.png")).toString("base64") } },
+            { text: "output: A lion wearing sunglasses and a suit, standing in front of a blue sky. The lion should be muscular and well-groomed, and the suit should be tailored to fit him perfectly. He should have gold chains around his neck and a gold watch on his wrist. He should be looking at the camera with a confident expression." },
 
-        const generationConfig = {
-            temperature: 0.9,
-            topK: 1,
-            topP: 1,
-            maxOutputTokens: 2048,
-        };
+            { text: "input: " }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/ip-two.png")).toString("base64") } },
+            { text: "output: A young girl with short brown hair and green eyes, wearing a blue shirt and brown jacket. She should be smiling and looking at the camera. The background should be blurred and contain some white dandelion-like flowers." },
 
-        const safetySettings = [
-            {
-                category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
-            {
-                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
-            {
-                category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
-            {
-                category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
+            { text: "input: " }, { inlineData: { mimeType: "image/jpeg", data: image } },
+            { text: "output:" }
         ];
 
         const result = await model.generateContent({
@@ -53,8 +35,12 @@ export async function POST(request: Request) {
             safetySettings
         });
 
-        return Response.json({ status: 200, output: `${result.response.text()}` })
+        return Response.json({ result: `${result.response.text()}` }, {
+            status: 200
+        })
     } catch (error) {
-        return Response.json({ status: 400, output: `The image you provided has been blocked for safety.` })
+        return Response.json({ result: `The image you provided has been blocked for safety.` }, {
+            status: 204
+        })
     }
 }
