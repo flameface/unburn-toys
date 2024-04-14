@@ -25,3 +25,15 @@ export const safetySettings = [
         threshold: HarmBlockThreshold.BLOCK_NONE,
     },
 ];
+
+export const loadImageFromURL = async (url: string) => {
+    try {
+        const response = await fetch(url);
+        const buffer = await response.arrayBuffer();
+        const base64 = Buffer.from(buffer).toString("base64");
+        return base64;
+    } catch (error) {
+        console.error("Error loading image from URL:", error);
+        return null;
+    }
+}

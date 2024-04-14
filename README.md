@@ -1,3 +1,13 @@
+---
+title: Unburn Toys
+emoji: 🔥
+colorFrom: red
+colorTo: red
+sdk: docker
+pinned: true
+app_port: 3000
+---
+
 <div>
 <h1>Toys 🔥 Open Source AI Tool</h1>
 </div>
