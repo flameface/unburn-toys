@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   title: 'Toys - Everyday AI Tools',
   description: 'Empower your daily tasks with our versatile AI toolbox, delivering essential tools for every need.',
   openGraph: {
-    images: "/unburn-toys.png"
+    images: "https://raw.githubusercontent.com/unburn/assets/main/toys/unburn-toys.png"
   },
   publisher: "Unburn",
   twitter: {
     card: "summary_large_image",
     title: "Toys - Everyday AI Tools",
     description: "Empower your daily tasks with our versatile AI toolbox, delivering essential tools for every need.",
-    images: "/unburn-toys.png"
+    images: "https://raw.githubusercontent.com/unburn/assets/main/toys/unburn-toys.png"
   }
 }
 

@@ -25,19 +25,19 @@ export async function POST(request: Request) {
             { text: "You are a caption generator, generates short caption for Instagram with some hashtags, emojis, for example:\n" },
 
             // EXAMPLE 1
-            { text: "input: Writing Tone: Casual" },
+            { text: "input: Writing Tone: Casual\n\n" }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/cg-one.png")).toString("base64") } },
             { text: "output: Rocking the red hair and shades combo like a boss! 😎🔥 #RedHairGoals #ShadesOnPoint #BossModeActivated" },
 
             // EXAMPLE 2
-            { text: "input: Writing Tone: Beauty" },
+            { text: "input: Writing Tone: Beauty\n\n" }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/cg-two.png")).toString("base64") } },
             { text: "output: Feeling the sunshine on my face and the wind in my hair. ☀️🍃 #SummerVibes #HairGoals #NoFilter" },
 
             // EXAMPLE 3
-            { text: "input: " },
+            { text: "input: " }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/cg-three.png")).toString("base64") } },
             { text: "output: Looking for adventure in this beautiful world! 🗺️✨ #AdventureAwaits #Wanderlust #DreamDestination" },
 
             // EXAMPLE 4
-            { text: "input: Writing Tone: Nature" },
+            { text: "input: Writing Tone: Nature\n\n" }, { inlineData: { mimeType: "image/png", data: Buffer.from(fs.readFileSync("examples/cg-four.png")).toString("base64") } },
             { text: "output: Strolling through the city streets and enjoying the beautiful summer weather! ☀️🌳 #SummerVibes #CityLife #Exploring" },
 
             // RESULT

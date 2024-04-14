@@ -22,7 +22,7 @@
     margin: auto;
     width: 100%;
     height: 1000px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 92.22%), url(/header.png);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 92.22%), url("https://raw.githubusercontent.com/unburn/assets/main/toys/header.png");
     mix-blend-mode: lighten;
     background-position: center;
     background-size: cover;
