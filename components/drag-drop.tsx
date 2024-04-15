@@ -63,6 +63,38 @@ export function MyDropzone({ image, setImage }: MyDropzoneProps): JSX.Element {
         };
     }, []);
 
+    const handleTouchStart = (event: TouchEvent) => {
+        // Prevent default behavior to avoid interference with touch interactions
+        event.preventDefault();
+        // You can add touch start logic here if needed
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+        // Prevent default behavior to avoid interference with touch interactions
+        event.preventDefault();
+        // You can add touch move logic here if needed
+    };
+
+    const handleTouchEnd = (event: TouchEvent) => {
+        // Prevent default behavior to avoid interference with touch interactions
+        event.preventDefault();
+        // You can add touch end logic here if needed
+    };
+
+    useEffect(() => {
+        // Add touch event listeners
+        document.addEventListener('touchstart', handleTouchStart);
+        document.addEventListener('touchmove', handleTouchMove);
+        document.addEventListener('touchend', handleTouchEnd);
+        
+        // Cleanup function to remove touch event listeners
+        return () => {
+            document.removeEventListener('touchstart', handleTouchStart);
+            document.removeEventListener('touchmove', handleTouchMove);
+            document.removeEventListener('touchend', handleTouchEnd);
+        };
+    }, []);
+
     const imagePreview = image.map(file => (
         <div style={{ position: "relative" }}>
             <img className={styles['image-preview']} src={file.preview} style={{ objectFit: "contain" }} />

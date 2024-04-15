@@ -7,7 +7,7 @@ export default function Footer() {
                 <p>
                     Powered by
                     <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}> Google</a> &
-                    <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}> Vercel</a>
+                    <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}> Netlify</a>
                 </p>
 
                 <div className={styles["social-media"]}>
