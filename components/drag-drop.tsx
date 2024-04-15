@@ -63,38 +63,6 @@ export function MyDropzone({ image, setImage }: MyDropzoneProps): JSX.Element {
         };
     }, []);
 
-    const handleTouchStart = (event: TouchEvent) => {
-        // Prevent default behavior to avoid interference with touch interactions
-        event.preventDefault();
-        // You can add touch start logic here if needed
-    };
-
-    const handleTouchMove = (event: TouchEvent) => {
-        // Prevent default behavior to avoid interference with touch interactions
-        event.preventDefault();
-        // You can add touch move logic here if needed
-    };
-
-    const handleTouchEnd = (event: TouchEvent) => {
-        // Prevent default behavior to avoid interference with touch interactions
-        event.preventDefault();
-        // You can add touch end logic here if needed
-    };
-
-    useEffect(() => {
-        // Add touch event listeners
-        document.addEventListener('touchstart', handleTouchStart);
-        document.addEventListener('touchmove', handleTouchMove);
-        document.addEventListener('touchend', handleTouchEnd);
-        
-        // Cleanup function to remove touch event listeners
-        return () => {
-            document.removeEventListener('touchstart', handleTouchStart);
-            document.removeEventListener('touchmove', handleTouchMove);
-            document.removeEventListener('touchend', handleTouchEnd);
-        };
-    }, []);
-
     const imagePreview = image.map(file => (
         <div style={{ position: "relative" }}>
             <img className={styles['image-preview']} src={file.preview} style={{ objectFit: "contain" }} />
@@ -116,8 +84,9 @@ export function MyDropzone({ image, setImage }: MyDropzoneProps): JSX.Element {
     return (
         <>
             {isDragActive ? (
-                <div className={styles['drag-drop-area']}>
-                    <div className={styles['drag-drop']} {...getRootProps()} style={image.length > 0 ? {
+                <div className={styles['drag-drop-area']} {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <div className={styles['drag-drop']} style={image.length > 0 ? {
                         background: "rgba(255, 255, 255, 0.05)"
                     } : { width: "100%", background: "rgba(255, 255, 255, 0.05)" }}>
                         <svg width="62" height="40" viewBox="0 0 62 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -133,8 +102,9 @@ export function MyDropzone({ image, setImage }: MyDropzoneProps): JSX.Element {
                     {imagePreview}
                 </div>
             ) : (
-                <div className={styles['drag-drop-area']}>
-                    <div className={`${styles['drag-drop']} ${image.length > 0 ? styles["hide"] : styles["drag-drop-max"]}`} {...getRootProps()}>
+                <div className={styles['drag-drop-area']} {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <div className={`${styles['drag-drop']} ${image.length > 0 ? styles["hide"] : styles["drag-drop-max"]}`}>
                         <svg width="62" height="40" viewBox="0 0 62 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M50.1656 16.8333V17.3322L50.6645 17.3333C56.6357 17.3466 61.5 22.2949 61.5 28.4028C61.5 34.514 56.6603 39.4861 50.6933 39.4861H35.9286V29.375H42.0991H43.2687L42.4605 28.5295L31.3614 16.9184L30.9998 16.5401L30.6384 16.9186L19.5393 28.5436L18.7322 29.3889H19.9009H26.0714V39.5H12.3862C5.83527 39.5 0.5 34.0669 0.5 27.3611C0.5 22.0339 3.86496 17.5144 8.56388 15.8892L8.84569 15.7917L8.89387 15.4975C9.50651 11.7562 12.7111 8.90278 16.5379 8.90278C17.7819 8.90278 18.9641 9.21474 20.0204 9.75134L20.4808 9.98522L20.6997 9.5175C23.1969 4.18189 28.5077 0.5 34.6812 0.5C43.2392 0.5 50.1933 7.57243 50.1933 16.3333C50.1933 16.3925 50.1884 16.4551 50.1812 16.542L50.1806 16.5493C50.174 16.6281 50.1656 16.7291 50.1656 16.8333Z" stroke="white" />
                         </svg>
