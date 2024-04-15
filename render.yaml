@@ -1,9 +1,11 @@
+services:
 - type: web
-  name: nextjs-static
-  runtime: static
+  name: next-js
+  runtime: node
+  plan: starter
   buildCommand: npm install; npm run build
-  staticPublishPath: out
-  pullRequestPreviewsEnabled: true
+  startCommand: yarn start
+  autoDeploy: false
   envVars:
   - key: NODE_ENV
     value: production
