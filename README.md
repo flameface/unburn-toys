@@ -4,8 +4,6 @@
 
 **Toys**, an open-source AI tool designed for everyday purposes utilizes Google's Gemini large language model. While it currently offers a limited number of tools, more useful ones will be added over time.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7c1d82fe-ec47-4a36-ab1f-ad0fe82a0c4a/deploy-status)](https://app.netlify.com/sites/stalwart-panda-37b2c0/deploys)
-
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [List of Tools](#list-of-tools)

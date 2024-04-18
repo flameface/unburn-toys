@@ -6,8 +6,7 @@ export default function Footer() {
             <div className={styles.footer}>
                 <p>
                     Powered by
-                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}> Google</a> &
-                    <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}> Netlify</a>
+                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}> Google</a>
                 </p>
 
                 <div className={styles["social-media"]}>
