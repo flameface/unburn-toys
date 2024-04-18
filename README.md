@@ -4,6 +4,8 @@
 
 **Toys**, an open-source AI tool designed for everyday purposes utilizes Google's Gemini large language model. While it currently offers a limited number of tools, more useful ones will be added over time.
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/K1iD7P?referralCode=pwZhnp)
+
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [List of Tools](#list-of-tools)
