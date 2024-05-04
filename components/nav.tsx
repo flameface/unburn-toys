@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 
 export default function Nav() {
     return (
-        <nav>
+        <nav className="fadeIn">
             <div style={{ flexDirection: "row", display: "flex" }}>
                 <a href="/">
                     <Image

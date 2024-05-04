@@ -8,8 +8,8 @@ export default async function Home() {
   return (
     <>
       <Nav />
-      <div className={styles.headerImage}></div>
-      <div className={styles.mainHead}>
+      <div className={`${styles.headerImage} fadeIn`}></div>
+      <div className={`${styles.mainHead} fadeIn`}>
         <h1>Everyday AI Tools: Unburn Toys</h1>
         <p>Empower your daily tasks with our versatile AI toolbox, delivering essential tools for every need.</p>
 

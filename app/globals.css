@@ -51,6 +51,21 @@ h3 {
   font-size: 20px;
 }
 
+.fadeIn {
+  animation: fadeInAnimation 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     width: 100%;

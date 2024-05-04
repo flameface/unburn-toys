@@ -100,7 +100,7 @@ export default function Card() {
         <>
             <div style={{ marginBottom: "50px" }}></div>
 
-            <div className={styles.container} id="text-tools">
+            <div className={`${styles.container} fadeIn`} id="text-tools">
                 <h2>Text AI Tools</h2>
                 <p>These are the trained text-based AI tools.</p>
 
